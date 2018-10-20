@@ -1,0 +1,68 @@
+<!--pages/user/user.wxml-->
+<view class='page'>
+  <view class='page_hd' style="padding-top:5%">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+          <image src="{{userInfo.avatarUrl}}" style="width: 75px; height: 75px; display: block" />
+        </view>
+        <view class="weui-cell__bd">
+          <view>{{userInfo.nickName}}</view>
+          <!-- <view style="font-size: 13px;color: #888888;">摘要信息</view> -->
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">个人信息</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='page_hd' style="padding-top:15%">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+          <image src="../../images/message.png" style="width: 50px; height: 50px; display: block" />
+        </view>
+        <view class="weui-cell__bd">
+          <view style="display: inline-block; vertical-align: middle">我的消息</view>
+          <view wx:if="{{unreadQuantity>0}}" class="weui-badge" style="margin-left: 5px;">{{unreadQuantity}}</view>
+          <!-- <view style="font-size: 13px;color: #888888;">摘要信息</view> -->
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">查看更多</view>
+      </view>
+      <view wx:for="{{messageArray}}" class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">
+                    <view style="display: inline-block; vertical-align: middle">{{item.title}}</view>
+                    <view style="font-size: 13px;color: #888888;">{{item.createTime}}</view>
+                </view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">{{item.status}}</view>
+            </view>
+    </view>
+  </view>
+
+  <view class='page_hd' style="padding-top:5%">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+          <image src="../../images/guidance.png" style="width: 50px; height: 50px; display: block" />
+        </view>
+        <view class="weui-cell__bd">
+          <view>使用说明</view>
+          <!-- <view style="font-size: 13px;color: #888888;">摘要信息</view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='page_hd'>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+          <image src="../../images/feedback.png" style="width: 50px; height: 50px; display: block" />
+        </view>
+        <view class="weui-cell__bd">
+          <view>意见反馈</view>
+          <!-- <view style="font-size: 13px;color: #888888;">摘要信息</view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
